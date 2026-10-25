@@ -1,0 +1,95 @@
+generated: '2026-10-25'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/sense360-openapi-generated.yml
+vocabulary:
+  name: Sense360 Domain Vocabulary
+  description: 'Terms declared by Sense360''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-25'
+  terms:
+  - term: PostResponse
+    definition: 'Object declared by the contract with fields: storefront_access_token.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostResponse
+  - term: GetWellKnownCustomerAccountApiResponse
+    definition: 'Object declared by the contract with fields: customerAddressUpdate.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/GetWellKnownCustomerAccountApiResponse
+  - term: GetWellKnownOpenidConfigurationResponse
+    definition: 'Object declared by the contract with fields: authentication_endpoints, standard_openid_connect_discovery_format.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/GetWellKnownOpenidConfigurationResponse
+  - term: PostApi202610GraphqlJsonResponse
+    definition: 'Object declared by the contract with fields: customerAccessToken, companyLocationId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostApi202610GraphqlJsonResponse
+  - term: GetApiUcpMcpResponse
+    definition: 'Object declared by the contract with fields: access_token, token_type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/GetApiUcpMcpResponse
+  - term: PostAuthAccessTokenResponse
+    definition: 'Object declared by the contract with fields: access_token, token_type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostAuthAccessTokenResponse
+  - term: PostCustomerApi202610GraphqlResponse
+    definition: 'Object declared by the contract with fields: customerAddressUpdate.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostCustomerApi202610GraphqlResponse
+  - term: GetDocsInstallHtmlResponse
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/GetDocsInstallHtmlResponse
+  - term: PostOrgidApi202610GraphqlJsonRequest
+    definition: 'Object declared by the contract with fields: query.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostOrgidApi202610GraphqlJsonRequest
+  - term: PostOrgidApi202610GraphqlJsonResponse
+    definition: 'Object declared by the contract with fields: data, errors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostOrgidApi202610GraphqlJsonResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation POST /: POST /'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml
+  - term: API
+    definition: 'Resource group in the contract; its operation GET /.well-known/customer-account-api: GET /.well-known/customer-account-api'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml
+  - term: App
+    definition: 'Resource group in the contract; its operation POST /app/2026-10/events: POST /app/2026-10/events'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml
+  - term: Auth
+    definition: 'Resource group in the contract; its operation POST /auth/access_token: POST /auth/access_token'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml
+  - term: Customer
+    definition: 'Resource group in the contract; its operation POST /customer/api/2026-10/graphql: POST /customer/api/2026-10/graphql'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml
+  - term: Docs
+    definition: 'Resource group in the contract; its operation GET /docs/install.html: GET /docs/install.html'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml
+  - term: Webhooks
+    definition: 'Resource group in the contract; its operation POST /webhooks/products: Example request headers'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/sense360-openapi-generated.yml

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sense360/main/json-schema/sense360-get-well-known-openid-configuration-response-schema.json",
+  "title": "GetWellKnownOpenidConfigurationResponse",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/GetWellKnownOpenidConfigurationResponse",
+  "type": "object",
+  "properties": {
+    "authentication_endpoints": {
+      "type": "string",
+      "description": "Authorization, token, logout URLs"
+    },
+    "standard_openid_connect_discovery_format": {
+      "type": "string",
+      "description": "Standard OpenID Connect discovery format"
+    }
+  }
+}

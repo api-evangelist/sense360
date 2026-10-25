@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sense360/main/json-schema/sense360-post-orgid-api202610-graphql-json-request-schema.json",
+  "title": "PostOrgidApi202610GraphqlJsonRequest",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/sense360-openapi-generated.yml#/components/schemas/PostOrgidApi202610GraphqlJsonRequest",
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "GraphQL query string"
+    }
+  },
+  "required": [
+    "query"
+  ]
+}

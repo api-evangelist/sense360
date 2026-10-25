@@ -1,25 +1,115 @@
 aid: sense360
+
 name: Sense360
-description: 'Sense360 is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by bonfire-ventures) and added to the network as a stub for full-pipeline profiling.'
+
+image: http://mysense360.com/cdn/shop/files/Modular_ESP32_S3_Sensor_Platform6_ac3b22a8-95fe-4986-8bf6-26e837affa82.png?v=1756669202
+
+description: Sense360 provides modular ESPHome sensor kits for Home Assistant, offering PoE-powered bathroom and room sensing solutions. Their
+  products include the Sense360 Core hub, RoomIQ for presence, temperature, humidity, and light detection, and VentIQ for bathroom air quality
+  monitoring. Designed for easy integration, the kits enable smart home automations that respond to environmental conditions, improving comfort
+  and energy efficiency.
+
 url: https://raw.githubusercontent.com/api-evangelist/sense360/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-25'
+
 modified: '2026-10-25'
+
 tags:
 - Company
-apis: []
+- HomeAutomation
+- IoT
+- Sensors
+- ESPHome
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+common:
+- type: RateLimits
+  url: rate-limits/sense360-rate-limits.yml
+- type: Spectral
+  url: rules/sense360-rules.yml
+- type: JSONLD
+  url: json-ld/sense360-context.jsonld
+- type: Vocabulary
+  url: vocabulary/sense360-vocabulary.yml
+- type: DataModel
+  url: data-model/sense360-data-model.yml
+- type: Conformance
+  url: conformance/sense360-conformance.yml
+- type: LLMsTxt
+  url: llms/sense360-llms.txt
+- type: WellKnown
+  url: well-known/sense360-well-known.yml
+- type: Hosts
+  url: hosts/sense360-hosts.yml
+- type: Vendors
+  url: vendors/sense360-vendors.yml
+- type: Newsroom
+  url: https://mysense360.com/blogs/news
+- type: GettingStarted
+  url: https://shopify.dev/docs/agents/get-started/quickstart
+- type: DomainSecurity
+  url: security/sense360-domain-security.yml
+- type: Website
+  url: https://mysense360.com
+- type: Documentation
+  url: https://mysense360.com/pages/about-us
+- type: Support
+  url: https://mysense360.com/pages/contact
+- type: PrivacyPolicy
+  url: https://mysense360.com/policies/privacy-policy
+
+apis:
+- aid: sense360:sense360-api
+  name: Sense360 API
+  description: 'Sense360 API as documented publicly: 15 operations. Contract generated from the documentation by API Evangelist (2026-10-25);
+    not the provider''s own document.'
+  humanURL: https://shopify.dev/docs/api/storefront
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/sense360-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/sense360-get-well-known-customer-account-api-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sense360-post-customer-api202610-graphql-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sense360-get-well-known-openid-configuration-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sense360-post-orgid-api202610-graphql-json-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sense360-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sense360-post-orgid-api202610-graphql-json-request-schema.json
+
 x-backed-by:
 - bonfire-ventures
-common:
-- type: Website
-  url: https://sense360.com
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: The company redirects its domain to Medallia and provides no public developer API documentation.
+  evidence:
+  - url: https://sense360.com
+    status: 301
+  checked: '2026-10-25'
+x-enrichment:
+  date: '2026-10-25'
+  status: enriched
+  artifacts_added: 25
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

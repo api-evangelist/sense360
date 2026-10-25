@@ -1,0 +1,18 @@
+generated: '2026-10-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://shopify.dev/docs/agents/profiles/auth-and-rate-limiting
+sources:
+- https://shopify.dev/docs/agents/profiles/auth-and-rate-limiting
+name: Sense360 rate limits
+limits:
+- name: Global Catalog rate limits
+  limit_text: 5 requests each second
+  max: 5
+  window: each second
+  scope: per API client
+  endpoint: https://catalog.shopify.com/api/ucp/mcp
+headers:
+- Retry-After
+exhaustion_status: 429
+docs: https://shopify.dev/docs/agents/profiles/auth-and-rate-limiting

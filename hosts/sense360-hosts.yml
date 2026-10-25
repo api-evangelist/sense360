@@ -1,0 +1,94 @@
+generated: '2026-10-25'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 7
+  own: 2
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - website
+hosts:
+- host: api.mysense360.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: mysense360.com
+  role: api
+  relation: own
+- host: mysense360.com
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Newsroom
+  - Website
+  - Documentation
+  - Support
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  - hosting
+  platform: shopify.com
+  vendor: cloudflare
+  registrable_domain: mysense360.com
+  role: website
+  relation: own
+- host: shop.app
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: shop.app
+  role: other
+  relation: other-domain
+- host: shop.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: shop.com
+  role: other
+  relation: other-domain
+- host: shopify.dev
+  found_by:
+  - pointer
+  - apis[]
+  - docs-index
+  types:
+  - GettingStarted
+  serves:
+  - docs
+  registrable_domain: shopify.dev
+  role: docs
+  relation: other-domain
+- host: ucp.dev
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: ucp.dev
+  role: other
+  relation: other-domain
+- host: www.shopify.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: shopify.com
+  role: other
+  relation: platform

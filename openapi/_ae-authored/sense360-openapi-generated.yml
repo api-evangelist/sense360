@@ -1,0 +1,519 @@
+openapi: 3.1.0
+info:
+  title: Sense360 API
+  version: '2026-10-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-25: 15 operation(s) read from 21 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Sense360 has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 14
+    documentation: 1
+    pages-with-code: 19
+    pages-read: 21
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://shopify.dev/docs/api/storefront
+  - https://shopify.dev/docs/api/admin-graphql
+  - https://shopify.dev/docs/api/webhooks
+  - https://shopify.dev/docs/api/payments-apps
+  - https://shopify.dev/docs/api/admin-extensions
+  - https://shopify.dev/docs/api/customer-account-ui-extensions
+  - https://shopify.dev/docs/api/customer
+  - https://shopify.dev/docs/api/partner
+  - https://shopify.dev/docs/api/app-events
+  - https://shopify.dev/docs/api/storefront/latest
+  - https://shopify.dev/docs/api/admin-graphql/latest/mutations/storefrontAccessTokenCreate
+  - https://shopify.dev/docs/agents/orders/order-mcp
+  - https://shopify.dev/docs/agents/get-started/authentication
+  - https://shopify.dev/docs/agents/get-started/monitor-orders
+  - https://shopify.dev/docs/api/admin-graphql/latest
+  - https://shopify.dev/docs/api/admin-graphql/latest/mutations/discountAutomaticAppCreate
+  - https://shopify.dev/docs/api/webhooks/latest
+  - https://shopify.dev/docs/api/payments-apps/latest
+  - https://shopify.dev/docs/api/admin-extensions/latest
+  - https://shopify.dev/docs/api/customer-account-ui-extensions/latest
+  - https://shopify.dev/docs/api/pos-ui-extensions/latest/target-apis/platform-apis/camera-api
+paths:
+  /:
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://shopify.dev/docs/api/storefront
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl) Public access (cURL) Private access (cURL) Hydrogen Storefront API Client React Router Shopify API Ruby Copy 1 2 3 4 5
+          6 7 8 9 10 11 12 13 14 15 curl - X POST \ https ://{shop}. myshopify . com / api / 2026 - 10 / graphql . json \ - H ''Content-Type:
+          application/json'' \ - d ''{ "query": "{ products(first: 3) { edges { node { id title } } } }" }'' 1 2 3 4 5 6 7 curl - X POST \ https
+          ://{shop}. m'
+  /.well-known/customer-account-api:
+    get:
+      operationId: get_well_known_customer_account_api
+      tags:
+      - API
+      summary: GET /.well-known/customer-account-api
+      x-source: https://shopify.dev/docs/api/customer
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWellKnownCustomerAccountApiResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: curl Copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 //First discover the API endpoints const apiDiscoveryResponse = await
+          fetch ( `https:// ${shopDomain} /.well-known/customer-account-api` ) ; const apiConfig = await apiDiscoveryResponse . json ( ) ; //Use
+          the discovered endpoint directly const graphqlEndpoint = apiConfig . graphql_api ; const response = await fetch ( graphqlEndpoint ,
+          { met
+  /.well-known/openid-configuration:
+    get:
+      operationId: get_well_known_openid_configuration
+      tags:
+      - API
+      summary: OpenID configuration
+      x-source: https://shopify.dev/docs/api/customer
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWellKnownOpenidConfigurationResponse'
+      x-evidence:
+        kind: documentation
+  /api/2026-10/graphql.json:
+    post:
+      operationId: post_api_2026_10_graphql_json
+      tags:
+      - Api
+      summary: POST /api/2026-10/graphql.json
+      x-source: https://shopify.dev/docs/api/storefront
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApi202610GraphqlJsonResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST  https://{store_name}.myshopify.com/api/2026-10/graphql.json  -H 'Content-Type: application/json'  -d '{\n \"query\"\
+          : \"{\n products(first: 3) {\n edges {\n node {\n id\n title\n }\n }\n }\n }\"\n }' Token-based request # Get the ID and title of the\
+          \ three most recently added products"
+  /api/loyalty:
+    get:
+      operationId: get_api_loyalty
+      tags:
+      - Api
+      summary: GET /api/loyalty
+      x-source: https://shopify.dev/docs/api/customer-account-ui-extensions
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: javascript
+        snippet: 'fetch ( ''https://your-app.com/api/loyalty'' , { headers : { Authorization : `Bearer ${sessionToken} ` , } , } )'
+  /api/products/${id}:
+    get:
+      operationId: get_api_products_id
+      tags:
+      - Api
+      summary: GET /api/products/${id}
+      x-source: https://shopify.dev/docs/api/admin-extensions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: javascript
+        snippet: "fetch(`https://app.example.com/api/products/${id}`, {\n headers: {\n Authorization: `Bearer ${token}`,\n },\n })"
+  /api/ucp/mcp:
+    get:
+      operationId: get_api_ucp_mcp
+      tags:
+      - Api
+      summary: GET /api/ucp/mcp
+      x-source: https://shopify.dev/docs/agents/orders/order-mcp
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiUcpMcpResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -- request POST \\ -- url https ://api . shopify . com / auth / access_token \\ -- header 'Content-Type: application/json'\
+          \ \\ -- data '{ \"client_id\": \"{your_client_id}\", \"client_secret\": \"{your_client_secret}\", \"grant_type\": \"client_credentials\"\
+          \ }' {} Response Copy 1 2 3 4 { \"access_token\" : \"f8563253df0bf277ec9ac6f649fc3f17\" , \"token_type\" : \"Bearer\" } \n Anchor to\
+          \ Make requests Make requests Or"
+  /api/upload:
+    post:
+      operationId: post_api_upload
+      tags:
+      - Api
+      summary: POST /api/upload
+      x-source: https://shopify.dev/docs/api/pos-ui-extensions/latest/target-apis/platform-apis/camera-api
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: javascript
+        snippet: 'fetch ( ''https://your-backend.com/api/upload'' , { method : ''POST'' , headers : { ''Content-Type'' : ''application/json''
+          } , body : JSON . stringify ( { image : photo . base64 , mimeType : photo . type , } )'
+  /app/2026-10/events:
+    post:
+      operationId: post_app_2026_10_events
+      tags:
+      - App
+      summary: POST /app/2026-10/events
+      x-source: https://shopify.dev/docs/api/app-events
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: javascript
+        snippet: 'fetch ( "https://api.shopify.com/app/2026-10/events" , { method : "POST" , headers : { "Content-Type" : "application/json" ,
+          "Authorization" : "Bearer {BEARER_TOKEN}" , } , body : JSON . stringify ( { shop_id : "gid://shopify/Shop/23423423" , event_handle :
+          "sms_sent" , timestamp : "2026-01-27T14:30:00Z" , idempotency_key : "evt_55667788" , attributes : { value : 1 , } , } )'
+  /auth/access_token:
+    post:
+      operationId: post_auth_access_token
+      tags:
+      - Auth
+      summary: POST /auth/access_token
+      x-source: https://shopify.dev/docs/api/app-events
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAuthAccessTokenResponse'
+      x-evidence:
+        kind: code-example
+        language: javascript
+        snippet: 'fetch ( "https://api.shopify.com/auth/access_token" , { method : "POST" , headers : { "Content-Type" : "application/json" ,
+          } , body : JSON . stringify ( { client_id : "{your_client_id}" , client_secret : "{your_client_secret}" , grant_type : "client_credentials"
+          , } )'
+  /customer/api/2026-10/graphql:
+    post:
+      operationId: post_customer_api_2026_10_graphql
+      tags:
+      - Customer
+      summary: POST /customer/api/2026-10/graphql
+      x-source: https://shopify.dev/docs/api/customer
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCustomerApi202610GraphqlResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST  \"${GRAPHQL_ENDPOINT}\"  -H 'Content-Type: application/json'  -H 'Authorization: {access_token}'  -d '\n query\
+          \ {\n customer {\n emailAddress {\n emailAddress\n }\n }\n }\n ' Anchor to Versioning Versioning The Customer Account API is versioned\
+          \ . To keep your app stable, make sure that you specify a supported version in the URL. The discovered endpoint already includes a supported\
+          \ version. If y"
+  /docs/install.html:
+    get:
+      operationId: get_docs_install_html
+      tags:
+      - Docs
+      summary: GET /docs/install.html
+      x-source: https://shopify.dev/docs/api/admin-graphql
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDocsInstallHtmlResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl \nUse the curl utility to make API queries directly from the command line. Direct API Access \nMake requests to the Admin\
+          \ API directly from your app using the standard web fetch API . Requests are automatically authenticated and fast because Shopify handles\
+          \ them directly. \n Learn about direct API Access \n Configuration guide \n Other \nNeed a different language? Check the list of community-suppor"
+  /webhooks/products:
+    post:
+      operationId: post_webhooks_products
+      tags:
+      - Webhooks
+      summary: Example request headers
+      x-source: https://shopify.dev/docs/api/webhooks
+      parameters:
+      - name: Host
+        in: header
+        required: true
+        schema:
+          type: string
+        description: your-app.example.com
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+        description: application/json
+      - name: X-Shopify-Topic
+        in: header
+        required: true
+        schema:
+          type: string
+        description: products/update
+      - name: X-Shopify-Hmac-Sha256
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Base64-encoded HMAC signature
+      - name: X-Shopify-Shop-Domain
+        in: header
+        required: true
+        schema:
+          type: string
+        description: myshopify.com domain of the store
+      - name: X-Shopify-API-Version
+        in: header
+        required: true
+        schema:
+          type: string
+        description: API version used to serialize the payload
+      - name: X-Shopify-Webhook-Id
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Unique composite key for the delivery
+      - name: X-Shopify-Triggered-At
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Timestamp when Shopify triggered the delivery
+      - name: X-Shopify-Event-Id
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Unique ID shared across all deliveries from the same merchant action
+      - name: X-Shopify-Name
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Developer‑supplied subscription name
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /{orgid}/api/2026-10/graphql.json:
+    get:
+      operationId: get_orgid_api_2026_10_graphql_json
+      tags:
+      - Api
+      summary: GET /{orgId}/api/2026-10/graphql.json
+      x-source: https://shopify.dev/docs/api/partner
+      parameters:
+      - name: orgid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl Copy 1 2 3 4 5 6 7 curl - X POST \\ https ://partners . shopify . com / {organization_id} / api / 2026 - 10 / graphql .\
+          \ json \\ - H 'Content-Type: application/json' \\ - H 'X-Shopify-Access-Token: {partner_access_token}' \\ - d '{ \"query\": \"{your_query}\"\
+          \ }' \n Anchor to Endpoints and queries Endpoints and queries Use GraphiQL explorer through your Partners Dashboard to query the Partner\
+          \ API. The G"
+  /{orgId}/api/2026-10/graphql.json:
+    post:
+      operationId: post_orgId_api_2026_10_graphql_json
+      tags:
+      - Api
+      summary: Send a GraphQL query to the Partner API
+      description: POST a GraphQL query to https://partners.shopify.com/{org_id}/api/2026-10/graphql.json. Include the organization ID in the
+        path, the X-Shopify-Access-Token header, and a JSON body with a "query" field.
+      x-source: https://shopify.dev/docs/api/partner
+      parameters:
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: X-Shopify-Access-Token
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Partner API client access token belonging to the organization
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Must be application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostOrgidApi202610GraphqlJsonRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostOrgidApi202610GraphqlJsonResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostResponse:
+      type: object
+      properties:
+        storefront_access_token:
+          type: object
+          properties:
+            title:
+              type: string
+    GetWellKnownCustomerAccountApiResponse:
+      type: object
+      properties:
+        customerAddressUpdate:
+          type: object
+          properties:
+            userErrors:
+              type: array
+              items:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  field:
+                    type:
+                    - string
+                    - 'null'
+                  message:
+                    type: string
+    GetWellKnownOpenidConfigurationResponse:
+      type: object
+      properties:
+        authentication_endpoints:
+          type: string
+          description: Authorization, token, logout URLs
+        standard_openid_connect_discovery_format:
+          type: string
+          description: Standard OpenID Connect discovery format
+    PostApi202610GraphqlJsonResponse:
+      type: object
+      properties:
+        customerAccessToken:
+          type: string
+        companyLocationId:
+          type: string
+    GetApiUcpMcpResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+    PostAuthAccessTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+    PostCustomerApi202610GraphqlResponse:
+      type: object
+      properties:
+        customerAddressUpdate:
+          type: object
+          properties:
+            userErrors:
+              type: array
+              items:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  field:
+                    type:
+                    - string
+                    - 'null'
+                  message:
+                    type: string
+    GetDocsInstallHtmlResponse:
+      type: object
+      properties:
+        data:
+          type: string
+    PostOrgidApi202610GraphqlJsonRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: GraphQL query string
+      required:
+      - query
+    PostOrgidApi202610GraphqlJsonResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Result of the GraphQL query
+        errors:
+          type: array
+          description: List of errors if the query failed
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+- apiKey: []
+tags:
+- name: API
+- name: Api
+- name: App
+- name: Auth
+- name: Customer
+- name: Docs
+- name: Webhooks
